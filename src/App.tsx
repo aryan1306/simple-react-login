@@ -1,4 +1,3 @@
-import jwtDecode from "jwt-decode";
 import React, { useEffect, useState } from "react";
 import { Routes } from "./Routes";
 import { getToken, setToken } from "./utils/token";

@@ -33,7 +33,7 @@ export const Register: React.FC = () => {
 						validationSchema={registerSchema}
 						onSubmit={async ({ name, email, password }) => {
 							try {
-								const res = await register({
+								await register({
 									variables: { name, email, password },
 								});
 								// console.log(res);

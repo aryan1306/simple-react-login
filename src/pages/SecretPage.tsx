@@ -1,15 +1,6 @@
 import React from "react";
 import { useLogoutMutation, useMeQuery } from "../generated/graphql";
-import {
-	Flex,
-	Container,
-	Heading,
-	Link,
-	Button,
-	Box,
-	Image,
-	Grid,
-} from "@chakra-ui/react";
+import { Flex, Container, Heading, Link, Button } from "@chakra-ui/react";
 import { Link as Route, useNavigate } from "react-router-dom";
 
 interface Props {}

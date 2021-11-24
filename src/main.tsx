@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import { ChakraProvider } from "@chakra-ui/react";
 import {
@@ -17,8 +17,6 @@ import { setContext } from "@apollo/client/link/context";
 import { getToken } from "./utils/token";
 import { App } from "./App";
 import { errorLink } from "./utils/auth/refreshToken";
-import avatar from "animal-avatar-generator";
-
 const httpLink = new HttpLink({
 	uri: "http://localhost:4000/graphql",
 	credentials: "include",

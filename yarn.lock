@@ -1828,11 +1828,6 @@ agent-base@6:
   dependencies:
     debug "4"
 
-animal-avatar-generator@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/animal-avatar-generator/-/animal-avatar-generator-1.0.4.tgz#e6b59f029476496cfcc1b0b46e4191a564ae493b"
-  integrity sha512-g5PgmdV6XOGE8MHz1eOYGgmisNxUY2Ez3f6Xz2ejROnS77EMlp3KuQhDBoHlAGbN9ykvljFKyVGr7ZoYn35YEQ==
-
 ansi-escapes@^3.0.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-3.2.0.tgz#8780b98ff9dbf5638152d1f1fe5c1d7b4442976b"
@@ -3378,11 +3373,6 @@ jws@^3.2.2:
   dependencies:
     jwa "^1.4.1"
     safe-buffer "^5.0.1"
-
-jwt-decode@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/jwt-decode/-/jwt-decode-3.1.2.tgz#3fb319f3675a2df0c2895c8f5e9fa4b67b04ed59"
-  integrity sha512-UfpWE/VZn0iP50d8cz9NrZLM9lSWhcJ+0Gt/nm4by88UL+J1SiKN8/5dkjMmbEzwL2CAe+67GsegCbIKtbp75A==
 
 keyv@^3.0.0:
   version "3.1.0"

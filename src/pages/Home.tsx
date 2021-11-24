@@ -1,5 +1,4 @@
 import { Container, Heading, Text, Button, Flex } from "@chakra-ui/react";
-import jwtDecode from "jwt-decode";
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
