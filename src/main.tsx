@@ -18,7 +18,7 @@ import { getToken } from "./utils/token";
 import { App } from "./App";
 import { errorLink } from "./utils/auth/refreshToken";
 const httpLink = new HttpLink({
-	uri: "http://localhost:4000/graphql",
+	uri: "https://login.api-save-more.me/graphql",
 	credentials: "include",
 });
 
