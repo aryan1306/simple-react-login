@@ -13,6 +13,7 @@ import { registerSchema } from "./validationSchema/register";
 import { useRegisterMutation } from "./../generated/graphql";
 import { useNavigate } from "react-router-dom";
 import { notify } from "./../utils/notify";
+import { setToken } from "./../utils/token";
 
 export const Register: React.FC = () => {
 	const [register] = useRegisterMutation();
@@ -33,10 +34,14 @@ export const Register: React.FC = () => {
 						validationSchema={registerSchema}
 						onSubmit={async ({ name, email, password }) => {
 							try {
-								await register({
+								const res = await register({
 									variables: { name, email, password },
 								});
-								// console.log(res);
+								if (res && res.data) {
+									// setToken(res.data?.login?.accessToken);
+									setToken(res.data?.register?.accessToken);
+									history("/secret-page");
+								}
 								history("/secret-page");
 							} catch (error: any) {
 								notify(error?.message);

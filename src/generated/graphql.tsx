@@ -24,7 +24,7 @@ export type Mutation = {
   __typename?: 'Mutation';
   login: LoginResponse;
   logout: Scalars['Boolean'];
-  register: UserClass;
+  register: LoginResponse;
 };
 
 
@@ -90,7 +90,7 @@ export type RegisterMutationVariables = Exact<{
 }>;
 
 
-export type RegisterMutation = { __typename?: 'Mutation', register: { __typename?: 'UserClass', name: string, email: string } };
+export type RegisterMutation = { __typename?: 'Mutation', register: { __typename?: 'LoginResponse', accessToken: string } };
 
 
 export const ByeDocument = gql`
@@ -259,8 +259,7 @@ export type MeQueryResult = Apollo.QueryResult<MeQuery, MeQueryVariables>;
 export const RegisterDocument = gql`
     mutation Register($password: String!, $email: String!, $name: String!) {
   register(password: $password, email: $email, name: $name) {
-    name
-    email
+    accessToken
   }
 }
     `;
