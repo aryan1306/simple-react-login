@@ -9,7 +9,7 @@ export const App: React.FC = () => {
 	useEffect(() => {
 		//@ts-ignore
 		if (!token) {
-			fetch("http://localhost:4000/api/refresh-token", {
+			fetch("https://login.api-save-more.me/api/refresh-token", {
 				method: "POST",
 				credentials: "include",
 			}).then(async (res) => {
