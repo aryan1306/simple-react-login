@@ -68,7 +68,7 @@ export const SecretPage: React.FC<Props> = () => {
 				alignItems='center'
 				justifyContent='center'>
 				<Heading textAlign='center' fontSize='3rem'>
-					Welcome to the Secret Page, {data.me?.name}!
+					Welcome to the Secret Page
 				</Heading>
 				<Button
 					onClick={async () => {
