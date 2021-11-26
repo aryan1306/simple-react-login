@@ -1,14 +1,13 @@
 import { Button } from "@chakra-ui/button";
 import { Input } from "@chakra-ui/input";
-import { Container, Grid, Heading, Text } from "@chakra-ui/layout";
+import { Container, Flex, Grid, Heading, Link, Text } from "@chakra-ui/layout";
 import { Form, Formik } from "formik";
 import React from "react";
 import Card from "../components/Card";
 import { loginSchema } from "./validationSchema/login";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link as Route } from "react-router-dom";
 import { useLoginMutation } from "./../generated/graphql";
 import { notify } from "./../utils/notify";
-import { setToken } from "./../utils/token";
 
 export const Login: React.FC = () => {
 	const navigate = useNavigate();
@@ -31,13 +30,9 @@ export const Login: React.FC = () => {
 							try {
 								const res = await login({ variables: { email, password } });
 								if (res && res.data) {
-									// setToken(res.data?.login?.accessToken);
-									setToken(res.data?.login?.accessToken);
 									navigate("/secret-page");
 								}
-								console.log(res);
 							} catch (error: any) {
-								// console.log(error);
 								notify(error?.message);
 							}
 						}}>
@@ -88,6 +83,11 @@ export const Login: React.FC = () => {
 							</Form>
 						)}
 					</Formik>
+					<Flex alignItems='center' justifyContent='flex-end'>
+						<Link as={Route} color='teal' to='/register'>
+							Don't have an account?
+						</Link>
+					</Flex>
 				</Card>
 			</Grid>
 		</Container>

@@ -1,18 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLogoutMutation, useMeQuery } from "../generated/graphql";
 import { Flex, Container, Heading, Link, Button } from "@chakra-ui/react";
 import { Link as Route, useNavigate } from "react-router-dom";
+import { notify } from "./../utils/notify";
 
 interface Props {}
 
 export const SecretPage: React.FC<Props> = () => {
 	const [logout, { client }] = useLogoutMutation();
-	const history = useNavigate();
+	const navigate = useNavigate();
 	const { data, loading, error } = useMeQuery({
 		fetchPolicy: "network-only",
 	});
+	useEffect(() => {
+		if (!loading && !data.me) {
+			navigate("/", { replace: true });
+			notify("You need to login", "info");
+		}
+	}, []);
 	if (loading) {
-		return <div>loading...</div>;
+		return <div className=''>loading...</div>;
 	}
 
 	if (error) {
@@ -61,17 +68,17 @@ export const SecretPage: React.FC<Props> = () => {
 				alignItems='center'
 				justifyContent='center'>
 				<Heading textAlign='center' fontSize='3rem'>
-					Welcome {data.me.name}!
+					Welcome to the Secret Page, {data.me?.name}!
 				</Heading>
 				<Button
 					onClick={async () => {
-						await logout();
 						await client.resetStore();
-						history("/");
+						logout();
+						navigate("/", { replace: true });
 					}}
 					color='teal'
 					mt='1rem'>
-					Return to Home Page
+					Return to Home Page/Logout
 				</Button>
 			</Flex>
 		</Container>

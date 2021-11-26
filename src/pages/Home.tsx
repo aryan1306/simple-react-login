@@ -1,13 +1,10 @@
 import { Container, Heading, Text, Button, Flex } from "@chakra-ui/react";
-import React, { useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Home: React.FC = () => {
 	const history = useNavigate();
 
-	useEffect(() => {
-		localStorage.removeItem("jid");
-	});
 	return (
 		<Container maxW='container.lg'>
 			<Heading mt='3rem' mb='2rem' fontSize='2.2rem' textAlign='center'>
