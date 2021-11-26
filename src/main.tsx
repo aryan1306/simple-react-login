@@ -10,8 +10,8 @@ import { ToastContainer } from "react-toastify";
 import { App } from "./App";
 
 const client = new ApolloClient({
-	// uri: "https://login.api-save-more.me/graphql",
-	uri: "http://localhost:4000/graphql",
+	uri: "https://login.api-save-more.me/graphql",
+	// uri: "http://localhost:4000/graphql",
 	cache: new InMemoryCache(),
 	credentials: "include",
 });
