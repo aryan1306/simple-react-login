@@ -73,7 +73,7 @@ export const SecretPage: React.FC<Props> = () => {
 				<Button
 					onClick={async () => {
 						await client.resetStore();
-						logout();
+						await logout();
 						navigate("/", { replace: true });
 					}}
 					color='teal'
